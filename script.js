@@ -244,6 +244,15 @@ const restaurant = {
 const menu = [...restaurant.starterMenu, ...restaurant.mainMenu];
 for (const item of menu) console.log(item); // we create a variable 'item' of menu and we loop the entire array and each element we log one by one
 
+// for (const item of menu.entries()) {
+//     console.log(`${item[0] + 1}: ${item[1]}`); // we start from index 0 and position number 1 
+// }
+// console.log([...menu.entries()]);
+
+
+for (const [i, el] of menu.entries()) {
+    console.log(`${i + 1}: ${el}`);
+}
 
 
 
