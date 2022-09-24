@@ -240,16 +240,22 @@ const restaurant = {
 
 };
 
+// --------- for of loop ----------
+const menu = [...restaurant.starterMenu, ...restaurant.mainMenu];
+for (const item of menu) console.log(item); // we create a variable 'item' of menu and we loop the entire array and each element we log one by one
 
-const rest1 = {
-    name: 'Capri',
-    // numGuests: 20,
-    numGuests: 0,
-};
-const rest2 = {
-    name: 'La Piazza',
-    owner: 'Giovanni Rossi',
-};
+
+
+
+// const rest1 = {
+//     name: 'Capri',
+//     // numGuests: 20,
+//     numGuests: 0,
+// };
+// const rest2 = {
+//     name: 'La Piazza',
+//     owner: 'Giovanni Rossi',
+// };
 
 // method 1
 // rest1.numGuests = rest1.numGuests || 10; // if the rest1 numGuests does not exit then return numGuests = 10  
@@ -268,11 +274,11 @@ const rest2 = {
 // rest1.owner = rest1.owner && '<ANONYMOUS>'; // owner: undefined
 // rest2.owner = rest2.owner && '<ANONYMOUS>'; // owner: <ANONYMOUS>
 
-rest1.owner &&= '<ANONYMOUS>'; // AND nullish
-rest2.owner &&= '<ANONYMOUS>';
+// rest1.owner &&= '<ANONYMOUS>'; // AND nullish
+// rest2.owner &&= '<ANONYMOUS>';
 
-console.log(rest1);
-console.log(rest2);
+// console.log(rest1);
+// console.log(rest2);
 
 
 
