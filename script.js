@@ -249,6 +249,31 @@ const restaurant = {
 
 };
 
+// Working with STRINGS //////////////////////////////////
+const airline = 'TAP Air Portugal';
+const plane = 'A320';
+
+console.log(plane[0]); // A
+console.log('B737'[0]); // B
+
+console.log(airline.length); // 16
+console.log('B737'.length); // 4
+console.log(airline.indexOf('r')); // first index of 'r' is 6
+console.log(airline.lastIndexOf('r')); // last index of 'r' is 10
+console.log(airline.indexOf('portugal')); // -1
+
+console.log(airline.slice(4)); // start to extract begin with index 4 is Air Portugal
+console.log(airline.slice(4, 7)); // start to extract from index 4 and stop at index 7 : Air
+// the length of slice(4, 7) is 3  (7 - 4 = 3)
+
+console.log(airline.slice(0, airline.indexOf(' '))); // we want to extract starting from index 0 till the first space
+console.log(airline.slice(airline.lastIndexOf(' ') + 1)); // use + 1 to remove the space at the beginning of Portugal
+
+console.log(airline.slice(-2)); // al (to extract from the end : al (-1 is l , -2 is a))
+console.log(airline.slice(1, -1)); // AP Air Portuga
+
+
+/*
 const question = new Map([
     ['question', 'Where is the best garlic bread?'],
     [1, 'at IGA'],
@@ -259,7 +284,7 @@ const question = new Map([
     [false, 'Try again!'],
 ]);
 
-/*
+
 console.log(question);
 
 console.log(Object.entries(openingHours));
@@ -279,7 +304,6 @@ console.log(answer);
 
 console.log(question.get(question.get('correct') === answer)); 
 
-*/
 
 // convert MAP to Array
 console.log([...question]);
@@ -287,7 +311,7 @@ console.log(question.entries()); // same as [...question]
 console.log([...question.keys()]);
 console.log([...question.values()]);
 
-
+*/
 
 
 /*
