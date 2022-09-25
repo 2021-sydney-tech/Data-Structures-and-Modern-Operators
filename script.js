@@ -249,6 +249,36 @@ const restaurant = {
 
 };
 
+// loop over an array //////////////////////////////////////
+// Property KEY
+const properties = Object.keys(openingHours);
+// console.log(properties);
+let openStr = `We are open ${properties.length} days: `;
+
+for (const day of properties) {
+    openStr += `${day}, `
+}
+// console.log(openStr);
+
+// Property VALUES
+const values = Object.values(openingHours);
+// console.log(values);
+
+// Entire object
+const entries = Object.entries(openingHours);
+console.log(entries); // print entire
+
+// [key, value]
+for (const [key, {open, close}] of entries) {
+    // console.log(x); // print one by one
+    console.log(`On ${key} we open at ${open} and close at ${close}`);
+}
+
+
+
+
+
+/* ///////////////////////////////////////////////
 // to check if openingHours opens on Monday. If it does not then we can get ride of error by writing code below 
 // if (restaurant.openingHours.fri) console.log(restaurant.openingHours.fri);
 if (restaurant.openingHours.mon) console.log(restaurant.openingHours.mon);
@@ -282,11 +312,11 @@ console.log(users[0]?.name ?? 'User array empty.');
 // old way
 if (users.length > 0) console.log(users[0].name); else console.log('User array empty.');
 
-
+*/
 
 
 /*
-// --------- for of loop ----------
+// --------- for of loop ----------////////////////////////////
 const menu = [...restaurant.starterMenu, ...restaurant.mainMenu];
 for (const item of menu) console.log(item); // we create a variable 'item' of menu and we loop the entire array and each element we log one by one
 
