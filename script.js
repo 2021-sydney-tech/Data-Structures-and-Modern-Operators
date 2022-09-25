@@ -249,8 +249,23 @@ const restaurant = {
 
 };
 
+// to check if openingHours opens on Monday. If it does not then we can get ride of error by writing code below 
+// if (restaurant.openingHours.fri) console.log(restaurant.openingHours.fri);
+if (restaurant.openingHours.mon) console.log(restaurant.openingHours.mon);
 
+// --------- With optional chaining operator -------------------
+// console.log(restaurant.openingHours.mom?.open); // undefined. Only mon exists this open property will be read
+// console.log(restaurant.openingHours.sat?.open); // 0
+// console.log(restaurant.openingHours?.thu?.open); // only openingHours does not exist then open property won't be read
 
+// --------- for of loop example nullish----------
+// we don't want to display undefined so we need to set a default value
+const days = ['mon', 'tue', 'wed', 'thu', 'fri', 'sat', 'sun'];
+for (const day of days) {
+    // console.log(day);
+    const open = restaurant.openingHours[day]?.open ?? 'closed'; // nullish
+    console.log(`On ${day} , we open at ${open}.`);
+}
 
 /*
 // --------- for of loop ----------
