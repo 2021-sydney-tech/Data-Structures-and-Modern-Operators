@@ -249,6 +249,37 @@ const restaurant = {
 
 };
 
+// sets ///////////////////////////////////////////////
+const orderSet = new Set(['Pasta', 'Pizza', 'Pizza', 'Risotto', 'Pasta', 'Pizza']); // SET is to remove the duplication
+// console.log(orderSet);
+// console.log(new Set('Jonas'));
+// console.log(orderSet.size); // size (NOT length) of orderSet is 3
+// console.log(orderSet.has('Pizza')); // true
+// console.log(orderSet.has('Bread')); // false
+
+// orderSet.add('Garlic Bread');
+// orderSet.delete('Risotto');
+// console.log(orderSet);
+// orderSet.clear(); // delete all the element of out the SET
+// console.log(orderSet); // 0
+
+// Retrive value out of a SET? SET has no index, so there is no way to get value or data out of a SET.
+
+// looping of SET
+// for (const order of orderSet) console.log(order);
+
+// examples of SET
+const staff = ['water', 'chef', 'waiter', 'manager', 'chef', 'waiter'];
+// const staffUnique = new Set(staff);
+const staffUnique = [...new Set(staff)];
+console.log(staffUnique);
+
+console.log(
+    new Set(['water', 'chef', 'waiter', 'manager', 'chef', 'waiter']).size
+); // to check what size of this array WITHOUT duplication
+
+
+/*
 // loop over an array //////////////////////////////////////
 // Property KEY
 const properties = Object.keys(openingHours);
@@ -274,7 +305,7 @@ for (const [key, {open, close}] of entries) {
     console.log(`On ${key} we open at ${open} and close at ${close}`);
 }
 
-
+*/
 
 
 
