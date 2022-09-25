@@ -249,7 +249,46 @@ const restaurant = {
 
 };
 
-// sets ///////////////////////////////////////////////
+// ES6 Constructor MAP ///////////////////////////////////////////
+const restau = new Map();
+// to fill up the MAP we use SET method. This SET method also return the undated MAP. Use console.log to see it
+restau.set('name', 'Classico Italiano'); // first argument: key name, 2nd argument: key value
+restau.set(1, 'Firenze, Italy');
+console.log(restau.set(2, 'Lisbon, Portugal')); // it return the updated MAP
+
+restau
+    .set('categories', ['Pasta', 'Pizza', 'Pizza', 'Risotto', 'Pasta', 'Pizza'])
+    .set('open', 11)
+    .set('close', 23)
+    .set(true, 'we are open.')
+    .set(false, 'we are closed.');
+    
+// console.log(restau.get('name')); // return the updated map and print the 'name' key
+// console.log(restau.get(true)); // return the updated map and print 'we are open'
+// console.log(restau.get(1));
+
+// we want to check if at 21 the restaurant is still open (true or false), so we compare the time
+const time = 21;
+// console.log(restau.get(time > restau.get('open') && time < restau.get('close'))); // it is true => we are open
+
+// console.log(restau.has('categories')); // ture
+// restau.delete(2); // delete the key 2
+// console.log(restau);
+// console.log(restau.size); // 7 items
+// restau.clear();
+// console.log(restau); 
+const arr = [1, 2]; 
+restau.set(arr, 'Test');
+restau.set(document.querySelector('h1'), 'Heading'); // key: hi, value: "Heading"
+console.log(restau.size);
+console.log(restau.get(arr)); // undefined but we can fix by creating a variable
+
+
+
+
+
+/*
+// ES6 Constructor SET ///////////////////////////////////////////////
 const orderSet = new Set(['Pasta', 'Pizza', 'Pizza', 'Risotto', 'Pasta', 'Pizza']); // SET is to remove the duplication
 // console.log(orderSet);
 // console.log(new Set('Jonas'));
@@ -277,7 +316,7 @@ console.log(staffUnique);
 console.log(
     new Set(['water', 'chef', 'waiter', 'manager', 'chef', 'waiter']).size
 ); // to check what size of this array WITHOUT duplication
-
+*/
 
 /*
 // loop over an array //////////////////////////////////////
