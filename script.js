@@ -286,6 +286,9 @@ checkMiddleSeat('11B');
 checkMiddleSeat('23C');
 checkMiddleSeat('3E');
 
+console.log(new String('jonas'));
+console.log(typeof new String('jonas')); // object
+console.log(typeof new String('jonas').slice(1)); // string : after it slice then js convert it to STRING
 
 // example ES6 MAP ///////////////////////////////////////////
 /*
