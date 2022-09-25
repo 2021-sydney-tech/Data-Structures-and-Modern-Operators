@@ -251,6 +251,30 @@ const restaurant = {
 
 // Working with STRINGS //////////////////////////////////
 
+const airline = 'TAP Air Portugal';
+
+// console.log(airline.toUpperCase());
+// console.log(airline.toLocaleLowerCase());
+
+
+// fix capitalization in name
+// method 1
+const passenger = 'jOnAs'; // we want it to be Jonas
+const passengerLower = passenger.toLowerCase();
+const passengerCorrect = passengerLower[0].toUpperCase() + passengerLower.slice(1);
+// console.log(passengerCorrect);
+
+
+// method 2 writing it as a function
+
+const fixCapitalization = function (name) {
+    const passengerLower = name.toLowerCase();
+    const passengerCorrect = passengerLower[0].toUpperCase() + passengerLower.slice(1);
+    console.log(passengerCorrect); 
+}
+fixCapitalization('pana');
+
+
 /*
 const airline = 'TAP Air Portugal';
 const plane = 'A320';
@@ -275,20 +299,27 @@ console.log(airline.slice(-2)); // al (to extract from the end : al (-1 is l , -
 console.log(airline.slice(1, -1)); // AP Air Portuga
 */
 
+
+/*
+// check if your seat is in the middle 
 const checkMiddleSeat = function(seat) {
     // B and E are middle seats
     const s = seat.slice(-1); // to extract the last charactor
     if (s === 'B' || s === 'E') console.log('You got the middle seat😬');
     else console.log('You got lucky 😎');
 }
-
 checkMiddleSeat('11B');
 checkMiddleSeat('23C');
 checkMiddleSeat('3E');
+*/
 
+
+/*
 console.log(new String('jonas'));
 console.log(typeof new String('jonas')); // object
 console.log(typeof new String('jonas').slice(1)); // string : after it slice then js convert it to STRING
+*/
+
 
 // example ES6 MAP ///////////////////////////////////////////
 /*
