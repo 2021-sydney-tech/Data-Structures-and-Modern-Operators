@@ -250,6 +250,8 @@ const restaurant = {
 };
 
 // Working with STRINGS //////////////////////////////////
+
+/*
 const airline = 'TAP Air Portugal';
 const plane = 'A320';
 
@@ -271,8 +273,21 @@ console.log(airline.slice(airline.lastIndexOf(' ') + 1)); // use + 1 to remove t
 
 console.log(airline.slice(-2)); // al (to extract from the end : al (-1 is l , -2 is a))
 console.log(airline.slice(1, -1)); // AP Air Portuga
+*/
+
+const checkMiddleSeat = function(seat) {
+    // B and E are middle seats
+    const s = seat.slice(-1); // to extract the last charactor
+    if (s === 'B' || s === 'E') console.log('You got the middle seat😬');
+    else console.log('You got lucky 😎');
+}
+
+checkMiddleSeat('11B');
+checkMiddleSeat('23C');
+checkMiddleSeat('3E');
 
 
+// example ES6 MAP ///////////////////////////////////////////
 /*
 const question = new Map([
     ['question', 'Where is the best garlic bread?'],
