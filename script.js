@@ -249,6 +249,37 @@ const restaurant = {
 
 };
 
+const question = new Map([
+    ['question', 'Where is the best garlic bread?'],
+    [1, 'at IGA'],
+    [2, 'at Coles'],
+    [3, 'Woolies'],
+    ['correct', 1],
+    [true, 'Correct!'],
+    [false, 'Try again!'],
+]);
+console.log(question);
+
+console.log(Object.entries(openingHours));
+const hoursMap = new Map(Object.entries(openingHours));
+console.log(hoursMap);
+
+// Quiz app **************
+// we want to print only the keys that are number
+console.log(question.get('question'));
+for (const [key, value] of question) {
+    if (typeof key === 'number') console.log(`Answer ${key}: ${value}`);
+}
+
+const answer = Number(prompt('Your answer'));
+console.log(answer);
+
+console.log(question.get(question.get('correct') === answer)); 
+
+
+
+
+/*
 // ES6 Constructor MAP ///////////////////////////////////////////
 const restau = new Map();
 // to fill up the MAP we use SET method. This SET method also return the undated MAP. Use console.log to see it
@@ -283,8 +314,7 @@ restau.set(document.querySelector('h1'), 'Heading'); // key: hi, value: "Heading
 console.log(restau.size);
 console.log(restau.get(arr)); // undefined but we can fix by creating a variable
 
-
-
+*/
 
 
 /*
