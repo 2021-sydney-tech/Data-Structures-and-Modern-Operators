@@ -281,12 +281,12 @@ const loginEmail = '   hello@jonas.Io \n';
 // method 1
 const lowerEmail = loginEmail.toLowerCase();
 const trimmedEmail = lowerEmail.trim();
-console.log(trimmedEmail);
+// console.log(trimmedEmail);
 
 // method 2
 const normalizedEmail = loginEmail.toLowerCase().trim();
 console.log(normalizedEmail);
-
+console.log(email === normalizedEmail);
 
 /*
 const airline = 'TAP Air Portugal';
