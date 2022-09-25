@@ -258,11 +258,14 @@ const question = new Map([
     [true, 'Correct!'],
     [false, 'Try again!'],
 ]);
+
+/*
 console.log(question);
 
 console.log(Object.entries(openingHours));
 const hoursMap = new Map(Object.entries(openingHours));
 console.log(hoursMap);
+
 
 // Quiz app **************
 // we want to print only the keys that are number
@@ -275,6 +278,14 @@ const answer = Number(prompt('Your answer'));
 console.log(answer);
 
 console.log(question.get(question.get('correct') === answer)); 
+
+*/
+
+// convert MAP to Array
+console.log([...question]);
+console.log(question.entries()); // same as [...question]
+console.log([...question.keys()]);
+console.log([...question.values()]);
 
 
 
