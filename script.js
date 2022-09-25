@@ -256,14 +256,13 @@ const airline = 'TAP Air Portugal';
 // console.log(airline.toUpperCase());
 // console.log(airline.toLocaleLowerCase());
 
-
+/*
 // fix capitalization in name
 // method 1
 const passenger = 'jOnAs'; // we want it to be Jonas
 const passengerLower = passenger.toLowerCase();
 const passengerCorrect = passengerLower[0].toUpperCase() + passengerLower.slice(1);
 // console.log(passengerCorrect);
-
 
 // method 2 writing it as a function
 
@@ -273,6 +272,20 @@ const fixCapitalization = function (name) {
     console.log(passengerCorrect); 
 }
 fixCapitalization('pana');
+*/
+
+// Comparing emails
+const email = 'hello@jonas.io';
+const loginEmail = '   hello@jonas.Io \n';
+
+// method 1
+const lowerEmail = loginEmail.toLowerCase();
+const trimmedEmail = lowerEmail.trim();
+console.log(trimmedEmail);
+
+// method 2
+const normalizedEmail = loginEmail.toLowerCase().trim();
+console.log(normalizedEmail);
 
 
 /*
