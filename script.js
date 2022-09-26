@@ -64,7 +64,6 @@ const z = 3;
 // console.log(z === window.z); // false
 * ***************************************************/
 
-
 // This keyword/variable
 /*
 //example1
@@ -196,79 +195,100 @@ console.log('Before marriage:', jessica2); // Jessica William 27 Alice Bob Mary 
 console.log('After marriage:', jessicaCopy); // Jessica Davis 27 Alice Bob Mary John
 */
 
-
 // ------------------- Destructuring -------------------------------------
 
 const openingHours = {
-    thu: {
-        open: 12,
-        close: 22,
-    },
-    fri: {
-        open: 11,
-        close: 23,
-    },
-    sat: {
-        open: 0, // open 24 hrs
-        close: 24,
-    },
+  thu: {
+    open: 12,
+    close: 22,
+  },
+  fri: {
+    open: 11,
+    close: 23,
+  },
+  sat: {
+    open: 0, // open 24 hrs
+    close: 24,
+  },
 };
 
 const restaurant = {
-    name: 'Classico Italiano',
-    location: 'Via Angelo Tavanti 23, Firenze',
-    categories: ['Italian', 'Pizzeria', 'Vegetarian'],
-    starterMenu: ['Focaccia', 'Bruschetta', 'Garlic Bread', 'Caprese Salad'],
-    mainMenu: ['Pizza', 'Pasta', 'Risotto'],
+  name: 'Classico Italiano',
+  location: 'Via Angelo Tavanti 23, Firenze',
+  categories: ['Italian', 'Pizzeria', 'Vegetarian'],
+  starterMenu: ['Focaccia', 'Bruschetta', 'Garlic Bread', 'Caprese Salad'],
+  mainMenu: ['Pizza', 'Pasta', 'Risotto'],
 
-    // ES6 enhanced object literals 
-    openingHours,
+  // ES6 enhanced object literals
+  openingHours,
 
-    // change function expression to ES6 enhanced object literals 
-    order(starterIndex, mainIndex) {
-        return [this.starterMenu[starterIndex], this.mainMenu[mainIndex]];
-    },
+  // change function expression to ES6 enhanced object literals
+  order(starterIndex, mainIndex) {
+    return [this.starterMenu[starterIndex], this.mainMenu[mainIndex]];
+  },
 
-    // change function expression to ES6 enhanced object literals 
-    orderDelivery({starterIndex = 1, mainIndex = 0, time = '20:00', address}) {
-        console.log(
-            `Order received! ${this.starterMenu[starterIndex]} and ${this.mainMenu[mainIndex]} will be delivered to ${address} at ${time}.`
-            );
-    },
+  // change function expression to ES6 enhanced object literals
+  orderDelivery({ starterIndex = 1, mainIndex = 0, time = '20:00', address }) {
+    console.log(
+      `Order received! ${this.starterMenu[starterIndex]} and ${this.mainMenu[mainIndex]} will be delivered to ${address} at ${time}.`
+    );
+  },
 
-    // change function expression to ES6 enhanced object literals 
-    orderPasta(ing1, ing2, ing3) {
-        console.log(`Here is your delicious pasta with ${ing1}, ${ing2}, and ${ing3}.`);
-    },
+  // change function expression to ES6 enhanced object literals
+  orderPasta(ing1, ing2, ing3) {
+    console.log(
+      `Here is your delicious pasta with ${ing1}, ${ing2}, and ${ing3}.`
+    );
+  },
 
-    // change function expression to ES6 enhanced object literals 
-    orderPizza(mainIngredient, ...otherIngredients) {
-        console.log(mainIngredient);
-        console.log(otherIngredients);
-    },
-
+  // change function expression to ES6 enhanced object literals
+  orderPizza(mainIngredient, ...otherIngredients) {
+    console.log(mainIngredient);
+    console.log(otherIngredients);
+  },
 };
+
+// String method practice /////////////////////////////
+const flights =
+  '_Delayed_Departure;fao93766109;txl2133758440;11:25+_Arrival;bru0943384722;fao93766109;11:45+_Delayed_Arrival;hel7439299980;fao93766109;12:05+_Departure;fao93766109;lis2323639855;12:30';
+// console.log(flights);
+
+const getCode = str => str.slice(0, 3).toUpperCase();
+
+for (const flight of flights.split('+')) {
+  const [type, from, to, time] = flight.split(';');
+
+  const output = `${type.startsWith('_Delayed') ? '📍' : ''}${type.replaceAll(
+    '_',
+    ' '
+  )} from ${getCode(from)} to ${getCode(to)} (${time.replace(
+    ':',
+    'h'
+  )})`.padStart(45);
+
+  console.log(output);
+}
 
 // PADDING ////////////////////////////////////////
 const message = 'Go to gate 23!';
-// console.log(message.padStart(25, '+')); // length 25 is for whole sentence 
-// console.log('Jonas'.padStart(25, '+')); // length 25 is for whole sentence 
+// console.log(message.padStart(25, '+')); // length 25 is for whole sentence
+// console.log('Jonas'.padStart(25, '+')); // length 25 is for whole sentence
 
 // console.log(message.padStart(20, '+').padEnd(30, '+')); // length 25 is for whole sentence
-// console.log('Jonas'.padStart(20, '+').padEnd(30, '+')); // length 25 is for whole sentence 
+// console.log('Jonas'.padStart(20, '+').padEnd(30, '+')); // length 25 is for whole sentence
 
 // Hide credit card number and show only the last 4 digits ////////////
-const maskCreditCard = function(number){
-    const str = number + ''; // we add '' to convert the number to string
-    const last = str.slice(-4);
-    // return last;
-    return last.padStart(str.length, '*'); // to length the sentence to the credit card whole number size, then fill with * and show only the last 4 digits
-}
+const maskCreditCard = function (number) {
+  const str = number + ''; // we add '' to convert the number to string
+  const last = str.slice(-4);
+  // return last;
+  return last.padStart(str.length, '*'); // to length the sentence to the credit card whole number size, then fill with * and show only the last 4 digits
+};
 
 // console.log(maskCreditCard(437823455));
 // console.log(maskCreditCard('1111222233331234'));
 
-
+/*
 // REPEAT ///////////////////////////
 const message2 = 'Bad weather.. All Departures Delayed...';
 console.log(message2.repeat(5));
@@ -278,9 +298,7 @@ const planesInLine = function(n) {
 planesInLine(5); // There are 5 planes in line ✈✈✈✈✈
 planesInLine(3); // There are 5 planes in line ✈✈✈
 planesInLine(10); // There are 5 planes in line ✈✈✈✈✈✈✈✈✈✈
-
-
-
+*/
 
 /*
 // SPLIT and JOIN method ////////////////////////////////////////
@@ -315,7 +333,6 @@ const capitalizeName = function (name) {
 capitalizeName('jessica ann smith devis');
 capitalizeName('sophanna ly');
 */
-
 
 // Working with STRINGS //////////////////////////////////
 
@@ -358,11 +375,12 @@ const normalizedEmail = loginEmail.toLowerCase().trim();
 
 // Replacing
 const priceGB = '288,97Є'; // to get Є sign: copy from google
-const priceAUS = priceGB.replace('Є', 'A$').replace(',', '.'); 
+const priceAUS = priceGB.replace('Є', 'A$').replace(',', '.');
 // 1st argument is the one we want to replace. 2nd argument is the string we will replace the 1st one.
 // console.log(priceAUS);
 
-const announcement = 'All passengers come to boarding door 23, Boarding door 23!';
+const announcement =
+  'All passengers come to boarding door 23, Boarding door 23!';
 // method 1: replaceAll
 // console.log(announcement.replaceAll('door', 'gate')); // replace all
 
@@ -394,7 +412,6 @@ checkBaggage('Socks and camera'); // welcome
 checkBaggage('Got some snacks and a gun for protection'); // not allowed
 */
 
-
 /*
 const airline = 'TAP Air Portugal';
 const plane = 'A320';
@@ -419,7 +436,6 @@ console.log(airline.slice(-2)); // al (to extract from the end : al (-1 is l , -
 console.log(airline.slice(1, -1)); // AP Air Portuga
 */
 
-
 /*
 // check if your seat is in the middle 
 const checkMiddleSeat = function(seat) {
@@ -433,13 +449,11 @@ checkMiddleSeat('23C');
 checkMiddleSeat('3E');
 */
 
-
 /*
 console.log(new String('jonas'));
 console.log(typeof new String('jonas')); // object
 console.log(typeof new String('jonas').slice(1)); // string : after it slice then js convert it to STRING
 */
-
 
 // example ES6 MAP ///////////////////////////////////////////
 /*
@@ -482,7 +496,6 @@ console.log([...question.values()]);
 
 */
 
-
 /*
 // ES6 Constructor MAP ///////////////////////////////////////////
 const restau = new Map();
@@ -519,7 +532,6 @@ console.log(restau.size);
 console.log(restau.get(arr)); // undefined but we can fix by creating a variable
 
 */
-
 
 /*
 // ES6 Constructor SET ///////////////////////////////////////////////
@@ -580,8 +592,6 @@ for (const [key, {open, close}] of entries) {
 
 */
 
-
-
 /* ///////////////////////////////////////////////
 // to check if openingHours opens on Monday. If it does not then we can get ride of error by writing code below 
 // if (restaurant.openingHours.fri) console.log(restaurant.openingHours.fri);
@@ -618,7 +628,6 @@ if (users.length > 0) console.log(users[0].name); else console.log('User array e
 
 */
 
-
 /*
 // --------- for of loop ----------////////////////////////////
 const menu = [...restaurant.starterMenu, ...restaurant.mainMenu];
@@ -635,7 +644,6 @@ for (const [i, el] of menu.entries()) {
 }
 */
 
-
 // const rest1 = {
 //     name: 'Capri',
 //     // numGuests: 20,
@@ -647,8 +655,8 @@ for (const [i, el] of menu.entries()) {
 // };
 
 // method 1
-// rest1.numGuests = rest1.numGuests || 10; // if the rest1 numGuests does not exit then return numGuests = 10  
-// rest2.numGuests = rest2.numGuests || 10; // if the rest2 numGuests does not exit then return numGuests = 10 
+// rest1.numGuests = rest1.numGuests || 10; // if the rest1 numGuests does not exit then return numGuests = 10
+// rest2.numGuests = rest2.numGuests || 10; // if the rest2 numGuests does not exit then return numGuests = 10
 
 // method 2 (numGuests: 20)
 // rest1.numGuests ||= 10;
@@ -658,7 +666,7 @@ for (const [i, el] of menu.entries()) {
 
 // Nullish assignment operators (numGuests: 0)
 // rest1.numGuests ??= 10; // OR nullish
-// rest2.numGuests ??= 10; 
+// rest2.numGuests ??= 10;
 
 // rest1.owner = rest1.owner && '<ANONYMOUS>'; // owner: undefined
 // rest2.owner = rest2.owner && '<ANONYMOUS>'; // owner: <ANONYMOUS>
@@ -669,8 +677,6 @@ for (const [i, el] of menu.entries()) {
 // console.log(rest1);
 // console.log(rest2);
 
-
-
 /*
 ///////// nullish operator ///////////////////////////
 restaurant.numGuests = 0; 
@@ -680,7 +686,6 @@ console.log(guests);
 const guestCorrect = restaurant.numGuests ?? 10;
 console.log(guestCorrect); // 0
 */
-
 
 /*
 ///////////////////// short-circuiting /////////////////////////
@@ -712,7 +717,6 @@ if (restaurant.orderPizza) {
 // method 2
 restaurant.orderPizza && restaurant.orderPizza('mushroom', 'spinach');
 */
-
 
 /*
 //////////////////////////////////////////////////
@@ -755,7 +759,6 @@ restaurant.orderDelivery({
 })
 */
 
-
 ///////////////////////////////////////////////////
 // SPREAD Operators ...
 // We only use spread operators when building a new array or when we pass a value into a function.
@@ -770,7 +773,6 @@ restaurant.orderDelivery({
 
 // const newMenu = [...restaurant.mainMenu, 'Gnocci'];
 // console.log(newMenu); // ['Pizza', 'Pasta', 'Risotto', 'Gnocci]
-
 
 // Copy array
 // const mainMenuCopy = [...restaurant.mainMenu];
@@ -788,8 +790,8 @@ restaurant.orderDelivery({
 // console.log(`${...str} Schmedtmann`); // SyntaxError: unexpected token '...'
 
 // REAL WORLD EXAMPLES
-// const ingredients = [prompt("Let's make pasta! Ingredient 1?"), 
-// prompt("Ingredient 2?"), 
+// const ingredients = [prompt("Let's make pasta! Ingredient 1?"),
+// prompt("Ingredient 2?"),
 // prompt("Ingredient 3?")];
 // console.log(ingredients);
 // restaurant.orderPasta(...ingredients);
@@ -825,7 +827,6 @@ console.log(a, b); // 23 7
 const { fri: {open: o, close: c} } = openingHours;
 console.log(o, c); // 11 23
 */
-
 
 /*
 const arr = [2,3,4];
