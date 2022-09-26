@@ -285,8 +285,27 @@ const trimmedEmail = lowerEmail.trim();
 
 // method 2
 const normalizedEmail = loginEmail.toLowerCase().trim();
-console.log(normalizedEmail);
-console.log(email === normalizedEmail);
+// console.log(normalizedEmail);
+// console.log(email === normalizedEmail);
+
+// Replacing
+const priceGB = '288,97Є'; // to get Є sign: copy from google
+const priceAUS = priceGB.replace('Є', 'A$').replace(',', '.'); 
+// 1st argument is the one we want to replace. 2nd argument is the string we will replace the 1st one.
+console.log(priceAUS);
+
+const announcement = 'All passengers come to boarding door 23, Boarding door 23!';
+// method 1: replaceAll
+// console.log(announcement.replaceAll('door', 'gate')); // replace all
+
+// method 2: regular expression
+console.log(announcement.replace(/door/g, 'gate')); // regex 'g' stands for global
+
+
+
+
+
+
 
 /*
 const airline = 'TAP Air Portugal';
