@@ -249,6 +249,17 @@ const restaurant = {
 
 };
 
+// PADDING ////////////////////////////////////////
+const message = 'Go to gate 23!';
+// console.log(message.padStart(25, '+')); // length 25 is for whole sentence 
+// console.log('Jonas'.padStart(25, '+')); // length 25 is for whole sentence 
+
+console.log(message.padStart(20, '+').padEnd(30, '+')); // length 25 is for whole sentence
+console.log('Jonas'.padStart(20, '+').padEnd(30, '+')); // length 25 is for whole sentence 
+
+
+
+/*
 // SPLIT and JOIN method ////////////////////////////////////////
 // console.log('a+very+nice+string'.split('+')); // separate each char by +
 // console.log('Jonas Schemedtmann'.split(' '));
@@ -280,8 +291,7 @@ const capitalizeName = function (name) {
 };
 capitalizeName('jessica ann smith devis');
 capitalizeName('sophanna ly');
-
-
+*/
 
 
 // Working with STRINGS //////////////////////////////////
