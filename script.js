@@ -254,8 +254,19 @@ const message = 'Go to gate 23!';
 // console.log(message.padStart(25, '+')); // length 25 is for whole sentence 
 // console.log('Jonas'.padStart(25, '+')); // length 25 is for whole sentence 
 
-console.log(message.padStart(20, '+').padEnd(30, '+')); // length 25 is for whole sentence
-console.log('Jonas'.padStart(20, '+').padEnd(30, '+')); // length 25 is for whole sentence 
+// console.log(message.padStart(20, '+').padEnd(30, '+')); // length 25 is for whole sentence
+// console.log('Jonas'.padStart(20, '+').padEnd(30, '+')); // length 25 is for whole sentence 
+
+// Hide credit card number and show only the last 4 digits ////////////
+const maskCreditCard = function(number){
+    const str = number + ''; // we add '' to convert the number to string
+    const last = str.slice(-4);
+    // return last;
+    return last.padStart(str.length, '*'); // to length the sentence to the credit card whole number size, then fill with * and show only the last 4 digits
+}
+
+console.log(maskCreditCard(437823455));
+console.log(maskCreditCard('1111222233331234'));
 
 
 
