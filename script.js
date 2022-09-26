@@ -265,8 +265,20 @@ const maskCreditCard = function(number){
     return last.padStart(str.length, '*'); // to length the sentence to the credit card whole number size, then fill with * and show only the last 4 digits
 }
 
-console.log(maskCreditCard(437823455));
-console.log(maskCreditCard('1111222233331234'));
+// console.log(maskCreditCard(437823455));
+// console.log(maskCreditCard('1111222233331234'));
+
+
+// REPEAT ///////////////////////////
+const message2 = 'Bad weather.. All Departures Delayed...';
+console.log(message2.repeat(5));
+const planesInLine = function(n) {
+    console.log(`There are ${n} planes in line ${'✈'.repeat(n)}`);
+}
+planesInLine(5); // There are 5 planes in line ✈✈✈✈✈
+planesInLine(3); // There are 5 planes in line ✈✈✈
+planesInLine(10); // There are 5 planes in line ✈✈✈✈✈✈✈✈✈✈
+
 
 
 
