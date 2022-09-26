@@ -249,6 +249,41 @@ const restaurant = {
 
 };
 
+// SPLIT and JOIN method ////////////////////////////////////////
+// console.log('a+very+nice+string'.split('+')); // separate each char by +
+// console.log('Jonas Schemedtmann'.split(' '));
+
+const [firstName, lastName] = 'Jonas Schemedtmann'.split(' '); // ['Jonas', 'Schemedtmann']
+
+const newName = ['Mr.', firstName, lastName.toUpperCase()].join(' ');
+// console.log(newName); // Mr. Jonas SCHEMEDTMANN
+
+const capitalizeName = function (name) {
+    // step 1: split
+    const names = name.split(' ');
+
+    // step 2: create one empty array to store
+    const namesUpper = [];
+
+    // step 3: convert to upperCase, slice then push to the new empty array
+    for (const nameChar of names) {
+        // method 1: SLICE()
+        //namesUpper.push(nameChar[0].toUpperCase() + nameChar.slice(1));
+
+        // method 2: REPLACE()
+        namesUpper.push(nameChar.replace(nameChar[0], nameChar[0].toUpperCase()));
+    }
+
+    // step 4: join the array elements
+    console.log(namesUpper.join(' '));
+
+};
+capitalizeName('jessica ann smith devis');
+capitalizeName('sophanna ly');
+
+
+
+
 // Working with STRINGS //////////////////////////////////
 
 const airline = 'TAP Air Portugal';
@@ -311,6 +346,7 @@ console.log(plane.includes('neo')); // true
 if (plane.startsWith('Airbus') && plane.endsWith('neo')) console.log('Part of the NEW Airbus family');
 */
 
+/*
 // Practice exercise
 const checkBaggage = function(items) {
     const baggage = items.toLowerCase();
@@ -323,8 +359,7 @@ const checkBaggage = function(items) {
 checkBaggage('I have a laptop, some Food and a pocket Knife.'); // not allowed
 checkBaggage('Socks and camera'); // welcome
 checkBaggage('Got some snacks and a gun for protection'); // not allowed
-
-
+*/
 
 
 /*
