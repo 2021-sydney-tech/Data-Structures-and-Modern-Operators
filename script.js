@@ -292,17 +292,37 @@ const normalizedEmail = loginEmail.toLowerCase().trim();
 const priceGB = '288,97Є'; // to get Є sign: copy from google
 const priceAUS = priceGB.replace('Є', 'A$').replace(',', '.'); 
 // 1st argument is the one we want to replace. 2nd argument is the string we will replace the 1st one.
-console.log(priceAUS);
+// console.log(priceAUS);
 
 const announcement = 'All passengers come to boarding door 23, Boarding door 23!';
 // method 1: replaceAll
 // console.log(announcement.replaceAll('door', 'gate')); // replace all
 
 // method 2: regular expression
-console.log(announcement.replace(/door/g, 'gate')); // regex 'g' stands for global
+// console.log(announcement.replace(/door/g, 'gate')); // regex 'g' stands for global
 
+/*
+// Booleans
+const plane = 'Airbus A320neo';
+console.log(plane.includes('A320')); // true. if it include 
+console.log(plane.includes('Boeing')); //false
+console.log(plane.includes('neo')); // true
 
+if (plane.startsWith('Airbus') && plane.endsWith('neo')) console.log('Part of the NEW Airbus family');
+*/
 
+// Practice exercise
+const checkBaggage = function(items) {
+    const baggage = items.toLowerCase();
+    if (baggage.includes('knife') || baggage.includes('gun')) {
+        console.log('You are not allowed on board.');
+    } else {
+        console.log('Welcome aboard!');
+    }
+};
+checkBaggage('I have a laptop, some Food and a pocket Knife.'); // not allowed
+checkBaggage('Socks and camera'); // welcome
+checkBaggage('Got some snacks and a gun for protection'); // not allowed
 
 
 
